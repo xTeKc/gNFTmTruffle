@@ -56,13 +56,13 @@ module.exports = {
       network_id: 3
     }
   },
-  contracts_directory: './src/backEnd/contracts/',
-  contracts_build_directory: './src/backEnd/abis/',
-  migrations_directory: './src/backEnd/migrations/',
-  test_directory: './src/backEnd/test/',
+  contracts_directory: './src/backend/contracts/',
+  contracts_build_directory: './src/backend/abis/',
+  migrations_directory: './src/backend/migrations/',
+  test_directory: './src/backend/test/',
   compilers: {
     solc: {
-      version: ">=0.6.0 <0.8.0",
+      version: "^0.8.0",
       optimizer: {
         enabled: true,
         runs: 200
