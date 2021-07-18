@@ -8,7 +8,9 @@ contract NFT {
   address payable public _owner;
   mapping (uint => bool) public sold;
   mapping (uint => uint) public price;
-  
-  constructor() {
+
+  constructor() ERC721("Bitcoin Stash", "BTSH") {
+  	_owner = msg.sender;
   }
+
 }
