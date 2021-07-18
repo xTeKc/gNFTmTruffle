@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Identicon from 'identicon.js';
-//import eth from '../images/eth.png'
+import eth from '../images/eth.png'
 import {
   accountSelector,
   balanceSelector,
