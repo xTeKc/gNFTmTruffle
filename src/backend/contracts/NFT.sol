@@ -5,6 +5,10 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract NFT {
+  address payable public _owner;
+  mapping (uint => bool) public sold;
+  mapping (uint => uint) public price;
+  
   constructor() {
   }
 }
