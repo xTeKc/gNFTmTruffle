@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { update } from '../store/interactions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import Navbar from './Navbar'
+import Main from './Main'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  async UNSAFE_componentWillMount() {
+    await this.loadBlockchainData(this.props.dispatch)
+  }
+
+  async loadBlockchainData(dispatch) {
+    /* Case 1, User connect for 1st time */
+    if(typeof window.ethereum !== 'undefined'){
+      await update(dispatch)
+      /* Case 2 - User switch account */
+      window.ethereum.on('accountsChanged', async () => {
+        await update(dispatch)
+      });
+      /* Case 3 - User switch network */
+      window.ethereum.on('chainChanged', async () => {
+        await update(dispatch)
+      });
+    }
+  }
+
+  render() {
+    return (
+      <div className="text-monospace text-center bgDark7">
+        <Navbar />
+        <Main />
+      </div>
+    );
+  }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+  }
+}
+
+export default connect(mapStateToProps)(App)
