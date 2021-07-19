@@ -1,3 +1,3 @@
 ##### NFT Marketplace
 <br>
-<img src="./projectDisplayGif/gNFTmTruffle.gif" alt="My Project GIF" width="850" height="250">
+<img src='https://gateway.pinata.cloud/ipfs/QmQ71Uei3hftx5MdWwdRVmDtqW2p7ZyM6AmGJsqqv7TH3y'>
