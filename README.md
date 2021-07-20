@@ -8,4 +8,4 @@
 + Ethereum blockchain
 + Connect with MetaMask (login)
 + Get access to NFTs after connection
-+ All NFTs have unique IDs and hosted on IPFS  
++ All NFTs have unique IDs and hosted on IPFS
